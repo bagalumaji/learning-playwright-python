@@ -18,8 +18,8 @@ def test_verify_window_handling():
     new_page.wait_for_load_state()
     print(new_page.title())
 
-    new_page.close()
-    page.close()
+    # new_page.close()
+    # page.close()
     context.close()
     browser.close()
     playwright.stop()
