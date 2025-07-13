@@ -44,3 +44,21 @@ def test_window_handling_demo_1():
     page_1.close()
     playwright.stop()
 
+def test_window_tap_handling_demo():
+    playwright = sync_playwright().start()
+    browser = playwright.chromium.launch(headless=False)
+    context = browser.new_context()
+    page_1 = context.new_page()
+    page_1.goto("http://testautomationpractice.blogspot.com/")
+
+    with context.expect_page() as page_promise:
+        page_1.locator("//button[text()='New Tab']").click()
+
+    page_2 = page_promise.value
+    print(page_2.title())
+    print(page_2.url)
+
+    page_2.wait_for_timeout(10000)
+    page_2.close()
+    page_1.close()
+    playwright.stop()
