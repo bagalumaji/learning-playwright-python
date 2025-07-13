@@ -1,5 +1,4 @@
-from playwright.sync_api import sync_playwright, Page
-from pytest_playwright.pytest_playwright import browser
+from playwright.sync_api import sync_playwright
 
 
 def te1st_verify_window_handling():
@@ -44,3 +43,4 @@ def test_window_handling_demo_1():
     page_2.close()
     page_1.close()
     playwright.stop()
+
