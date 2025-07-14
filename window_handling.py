@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 
 
-def te1st_verify_window_handling():
+def test_verify_window_handling():
     playwright = sync_playwright().start()
 
     browser = playwright.chromium.launch(headless=False,channel="chrome")
